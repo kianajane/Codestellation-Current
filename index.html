@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Codestellation Fall 2016</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
     <script src="https://use.fonticons.com/146de994.js"></script>
+    <script src="js/typed.js"></script>
+
   </head>
 
 <script type="text/javascript">
@@ -34,10 +35,49 @@ $(document).ready(function () {
     }
   });
 });
+
+  $(function(){
+      $(".type").typed({
+        strings: ["world.sayHello()", "spaceship.launch()"],
+        typeSpeed: 50,
+        loop: false,
+        showCursor: true,
+        backDelay: 1500,
+        backSpeed: 30,
+        cursorChar: "_"
+      });
+  });
 </script>
 
+
 <body>
-	<div id = "headerwrap">
+    <div class="pure-g">
+        <div class="pure-u-1" id="header">
+            <h1><img src="images/logo-text.png" class="logo"></img></h1>
+            <h2>
+                <span class="prompt"> > </span>
+                <span class="type"></span>
+            </h2>
+        </div>
+    </div>
+
+    <div class="section" id="about">
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <h2>A Hacka-What?</h2>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+            </div>
+            <div class="pure-u-1-2">
+            </div>
+        </div>
+    </div>
+
+
+	<!-- <div id = "headerwrap">
     <a id="mlh-trust-badge" style="position:fixed;top:0;right:50px;max-width:100px;width:10%;min-width: 60px;display:block;z-index:10000" href="https://mlh.io/?utm_campaign=Trust%20Badge" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/f2015.png" alt="MLH Official - Fall 2015" style="width:100%;" ></a>
 		<div class="overlay">
 			<h1>Codestellation</h1>
@@ -46,7 +86,6 @@ $(document).ready(function () {
       <a href="http://www.eventbrite.com/e/codestellation-fall-2015-tickets-18742828304"><button class="custom-btn"><p>register</p></button></a>
 			<a href="sponsorship_doc.pdf"><button class="custom-btn"><p>sponsor us</p></button></a>
 		</div>
-		<canvas id="myCanvas" height="700"></canvas>
 	</div>
 
 	<div id="blurb">
@@ -316,7 +355,7 @@ $(document).ready(function () {
 	</div>
 
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
-	<script src="js/constellation.js"></script>
+	<script src="js/constellation.js"></script> -->
 
 </body>
 </html>
