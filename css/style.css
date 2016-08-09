@@ -5,12 +5,10 @@ body {
 
 
 /* typography */
-/* TO DO: viewport sizes */
-h1, h2{
+h1, h2 {
 	font-family: 'Rubik', serif;
     letter-spacing: normal;
 }
-
 h1 {
     color: #19E0A2;
     font-size: 5em;
@@ -21,7 +19,6 @@ h1 {
     padding-top: 42px;
     padding-bottom: 42px;
 }
-
 h2 {
     color: black;
     font-size: 2em;
@@ -31,78 +28,136 @@ h2 {
     text-transform: uppercase;
     letter-spacing: .25em;
 }
-
 h3 {
     font-size: 1.75em;
 }
-
+h4 {
+    font-size: 1.3em;
+    text-align: center;
+}
 p {
     line-height: 1.8;
     font-size: 1.2em;
 }
-
 h3, h4, h5, p {
     font-family: "Space Mono", serif;
     letter-spacing: normal;
 }
 
 
+/* TODO: viewport sizes */
+
+
+/* spacing */
+.question-container {
+    margin-bottom: 3.5em;
+}
+.default-padding {
+    padding-left: 2.85em;
+    padding-right: 2.85em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+section {
+    margin: 0;
+    width: 100%;
+}
+
+/* panel */
+.panel{
+    float : left;
+    width : 100%;
+    padding: 2em 0 0 0;
+}
+.panel > input{
+    display: none;
+}
+.panel > section > h2 {
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 2em;
+    font-weight  normal;
+}
+.panel > input:first-child + section > h2 {
+    padding-left : 1em;
+}
+.panel > section > h2 > label {
+    display: block;
+    padding: 0 .25em 0.75em;
+    cursor: pointer;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    -webkit-user-select: none;
+}
+.panel > input:checked + section > h2 {
+    color: #19E0A2;
+    font-weight: 600;
+}
+.panel > section > .content {
+    position: relative;
+    z-index: 1;
+    float: right;
+    width: 100%;
+    margin: 3.5em 0 0 -100%;
+}
+.panel > input:checked + section > h2 {
+    position: relative;
+    z-index: 2;
+}
+.panel > input:not(:checked) + section > .content {
+    display : none;
+}
+
+
 /* header */
-#header {
-    background: white; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white, #EDFBF5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white, #EDFBF5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white, #EDFBF5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #EDFBF5); /* Standard syntax */
+header {
+    background: white;
+    /*background: -webkit-linear-gradient(white, #EDFBF5);
+    background: -o-linear-gradient(white, #EDFBF5);
+    background: -moz-linear-gradient(white, #EDFBF5);
+    background: linear-gradient(white, #EDFBF5);*/
+    top: 0;
 }
 #header-sub {
     padding: 2em 1em 2em 1em;
     margin: 0;
     text-align: center;
     margin-top: 7em;
-    min-height: 700px;
+    min-height: 400px;
     position: relative;
 }
-
 .logo {
    max-width: 100%;
    height: auto;
 }
-
 .type {
     text-transform: lowercase;
 }
 
+
 /* quick facts */
 #quick-facts {
     width: 100%;
-    border-bottom: 7px solid black;
-    padding: 1em;
+    padding: 2em;
     margin: 0px;
     letter-spacing: normal;
-    /*font-size: 5em;
-    font-weight: "Rubik";
-    position: absolute;
-    bottom: 0px;
-    margin: 0px;
-    padding: 0px;*/
 }
-
 #quick-facts h2 {
     text-align: left;
     margin-left: 0;
+    padding-bottom: .75em;
 }
-
 #quick-facts h3 {
-    padding: 0;
+    padding: .9em 0 .3em 0;
     margin: 0;
     font-size: 1.3em;
     font-family: "Rubik", serif;
     text-transform: uppercase;
-    color: grey;
     letter-spacing: .25em;
 }
-
 #quick-facts p {
     padding: 0;
     margin: 0;
@@ -113,8 +168,7 @@ h3, h4, h5, p {
 .prompt {
     color: #19E0A2;
 }
-
-.typed-cursor{
+.typed-cursor {
     opacity: 1;
     color: #19E0A2;
     -webkit-animation: blink 0.7s infinite;
@@ -137,35 +191,40 @@ h3, h4, h5, p {
     100% { opacity:1; }
 }
 
-/* section */
-.section {
-    padding: 2em;
-    margin: 0;
-    border: red;
-}
 
 /* about */
 #about {
-    background-color: #EDFBF5;
-    background-image: url('../images/shape-1.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    /*background-color: #EDFBF5;*/
+    top: 100%;
 }
-
 #about h2 {
     color: black;
 }
 
-/* lame spacing and stuff */
 
-.question-container {
-    margin-bottom: 3.5em;
+/* schedule */
+#schedule {
+    /*background: #e9e3f5;
+    background: -webkit-linear-gradient(#EDFBF5, #e9e3f5);
+    background: -o-linear-gradient(#EDFBF5, #e9e3f5);
+    background: -moz-linear-gradient(#EDFBF5, #e9e3f5);
+    background: linear-gradient(#EDFBF5, #e9e3f5);*/
+}
+#schedule h3 {
+    text-align: center;
+}
+.schedule-table td {
+    padding: .5em 1em;
+}
+.schedule-table {
+    font-family: "Space Mono", serif;
 }
 
-.default-padding {
-    padding-left: 2.85em;
-    padding-right: 2.85em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+
+/* map */
+#map {
+    /*background-color: #e9e3f5;*/
+    background-repeat: repeat-x;
+    background-position: center;
+    top: 300%;
 }
