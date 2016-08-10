@@ -15,7 +15,8 @@
   </head>
 
 <script type="text/javascript">
-  $(function(){
+window.addEventListener("DOMContentLoaded", function() {
+    $(function(){
       $(".type").typed({
         strings: ["world.sayHello()", "Brandeis.hack()", "spaceship.launch()"],
         typeSpeed: 50,
@@ -25,7 +26,29 @@
         backSpeed: 30,
         cursorChar: "_"
       });
-  });
+    });
+
+    function hasAttr(attribute) {
+        var attr = $(this).attr(attribute);
+        return (typeof attr !== typeof undefined && attr !== false)
+    }
+
+    var sections = ["#about", "#schedule", "#map", "#hardware", "#prizes", "#sponsors"];
+    sections.forEach(function(section) {
+        var button = $(section + "-button");
+        var section = $(section);
+        button.click(function(){
+            sections.forEach(function(section) {
+                if ($(section).hasClass("current")) {
+                    $(section).removeClass("current");
+                    $(section + "-button").removeClass("current");
+                }
+            });
+            section.addClass("current");
+            button.addClass("current");
+      });
+    });
+});
 </script>
 
 <body>
@@ -43,7 +66,7 @@
             <div id="quick-facts">
                 <div class="pure-g">
                     <div class="pure-u-1">
-                        <h2> //quick facts </h2>
+                        <h2> quick facts </h2>
                     </div>
                 </div>
                 <div class="pure-g">
@@ -68,247 +91,174 @@
         </div>
     </header>
 
+    <div class="pure-g">
+        <div class="pure-u-sm-1">
+            <div class="panel-controls">
+                <div class="default-padding">
+                    <button id="about-button" class="current"><h2>About</h2></button>
+                    <button id="schedule-button"><h2>Schedule</h2></button>
+                    <button id="map-button"><h2>Map</h2></button>
+                    <button id="hardware-button"><h2>Hardware</h2></button>
+                    <button id="prizes-button"><h2>Goodies</h2></button>
+                    <button id="sponsors-button"><h2>Sponsors</h2></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="panel">
-        <input name="panel" id="about" type="radio" checked>
-        <section>
-            <h2>
-                <label for="about">FAQ</label>
-            </h2>
-            <div class="content">
-                <div class="pure-g">
-                    <div class="pure-u-lg-1-2 pure-u-sm-1">
-                        <div class="default-padding">
-                            <div class="question-container">
-                                <h3>A Hacka-What?</h3>
-                                <p>A hackathon is an opportunity to get together with others who share your passion for building and creating technology for a weekend and create something great. That app you’ve been talking about making forever? That software that would really make school that much easier? This is the perfect opportunity to sit down and make it a reality. At Codestellation, you’ll join a small launch team to create something awesome over the course of 24 hours. Along the way, we’ve also got a bunch of fun activities planned just in case you need a break from all the coding you’ll be doing. If a weekend of making new friends, coding, and partaking in all sorts of fun activities sounds like a blast to you, join us for Codestellation Fall 2015!
-                                </p>
-                            </div>
+        <section id="about" class="current">
+            <div class="pure-g">
+                <div class="pure-u-lg-1-2 pure-u-sm-1">
+                    <div class="default-padding">
+                        <div class="question-container">
+                            <h3>A Hacka-What?</h3>
+                            <p>A hackathon is an opportunity to get together with others who share your passion for building and creating technology for a weekend and create something great. That app you’ve been talking about making forever? That software that would really make school that much easier? This is the perfect opportunity to sit down and make it a reality. At Codestellation, you’ll join a small launch team to create something awesome over the course of 24 hours. Along the way, we’ve also got a bunch of fun activities planned just in case you need a break from all the coding you’ll be doing. If a weekend of making new friends, coding, and partaking in all sorts of fun activities sounds like a blast to you, join us for Codestellation Fall 2015!
+                            </p>
+                        </div>
 
-                            <div class="question-container">
-                                <h3>Who Can Attend?</h3>
-                                <p>Any student older than 18 is invited to attend this event.  If you are a highschool student under 18, you can still come, but please contact us for forms.  We want to fill the halls with a diverse group of interesting hackers with a variety of different skills, attributes, strengths, and perspectives. If you don’t have a team, we can help you find one- all you have to do is indicate on the registration form that you would like to be placed with a team, and we will put you in contact with other hackers both prior to and at the start of the event. New hackers are absolutely encouraged to attend; if you’ve been waiting for a sign to tell you that you’re good enough to go to a hackathon, this is it!
-                                </p>
-                            </div>
+                        <div class="question-container">
+                            <h3>Who Can Attend?</h3>
+                            <p>Any student older than 18 is invited to attend this event.  If you are a highschool student under 18, you can still come, but please contact us for forms.  We want to fill the halls with a diverse group of interesting hackers with a variety of different skills, attributes, strengths, and perspectives. If you don’t have a team, we can help you find one- all you have to do is indicate on the registration form that you would like to be placed with a team, and we will put you in contact with other hackers both prior to and at the start of the event. New hackers are absolutely encouraged to attend; if you’ve been waiting for a sign to tell you that you’re good enough to go to a hackathon, this is it!
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="pure-u-lg-1-2 pure-u-sm-1">
-                        <div class="default-padding">
-                            <div class="question-container">
-                                <h3>When Is This Happening?</h3>
-                                <p>Codestellation will be the weekend of October 15-16, 2016.</p>
-                            </div>
+                <div class="pure-u-lg-1-2 pure-u-sm-1">
+                    <div class="default-padding">
+                        <div class="question-container">
+                            <h3>When Is This Happening?</h3>
+                            <p>Codestellation will be the weekend of October 15-16, 2016.</p>
+                        </div>
 
-                            <div class="question-container">
-                                <h3>Where Is This Happening?</h3>
-                                <p>Codestellation will take place at Brandeis University (in Waltham, MA) in the Shapiro Science Center. We will be sending out detailed directions as well as a map in an email to participants closer to the event date. Brandeis is conveniently located right on the Fitchburg-South Acton Line of the MBTA, making transportation from other Boston schools extremely easy.
-                                </p>
-                            </div>
+                        <div class="question-container">
+                            <h3>Where Is This Happening?</h3>
+                            <p>Codestellation will take place at Brandeis University (in Waltham, MA) in the Shapiro Science Center. We will be sending out detailed directions as well as a map in an email to participants closer to the event date. Brandeis is conveniently located right on the Fitchburg-South Acton Line of the MBTA, making transportation from other Boston schools extremely easy.
+                            </p>
+                        </div>
 
-                            <div class="question-container">
-                              <h3>What Should I Bring?</h3>
-                              <p>You will definitely need to bring a laptop or some other device to code on. As this is an overnight hackathon, you might thank yourself in the morning if you bring a toothbrush and a towel to wash your face. If this is your first time hacking, consider bringing a pillow and a sleeping bag – it makes a world of difference to be coding when you’re well-rested and energized. Other than basic necessities like that, we’ve got you covered: we will be providing all the snacks and food you could eat, a Codestellation t-shirt, lots of hardware, 3D printers, and monitors for all your coding needs.
-                                </p>
-                            </div>
+                        <div class="question-container">
+                          <h3>What Should I Bring?</h3>
+                          <p>You will definitely need to bring a laptop or some other device to code on. As this is an overnight hackathon, you might thank yourself in the morning if you bring a toothbrush and a towel to wash your face. If this is your first time hacking, consider bringing a pillow and a sleeping bag – it makes a world of difference to be coding when you’re well-rested and energized. Other than basic necessities like that, we’ve got you covered: we will be providing all the snacks and food you could eat, a Codestellation t-shirt, lots of hardware, 3D printers, and monitors for all your coding needs.
+                            </p>
+                        </div>
 
-                            <div class="question-container">
-                              <h3>Are There Rules?</h3>
-                              <p>We use MLH's <a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf">Code of Conduct</a>.
-                                </p>
-                            </div>
+                        <div class="question-container">
+                          <h3>Are There Rules?</h3>
+                          <p>We use MLH's <a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf">Code of Conduct</a>.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <input name="panel" id="schedule" type="radio">
-        <section>
-            <h2>
-                <label for="schedule">Schedule</label>
-            </h2>
-            <div class="content">
-                <div class="pure-g">
-                    <div class="pure-u-sm-1 pure-u-lg-1-2">
-                        <div class="default-padding">
-                            <h3> Saturday </h3>
-                            <table class="schedule-table">
-                                <tr>
-                                    <td>9 AM</td>
-                                    <td>Doors Open + Breakfast</td>
-                                    <td>Shapiro Science Center</td>
-                                </tr>
-                                <tr>
-                                    <td>9 AM</td>
-                                    <td>Doors Open + Breakfast</td>
-                                    <td>Shapiro Science Center</td>
-                                </tr>
-                                <tr>
-                                    <td>9 AM</td>
-                                    <td>Doors Open + Breakfast</td>
-                                    <td>Shapiro Science Center</td>
-                                </tr>
-                            </table>
-                        </div>
+        <section id="schedule">
+            <div class="pure-g">
+                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                    <div class="default-padding">
+                        <h3> Saturday </h3>
+                        <table class="schedule-table">
+                            <tr>
+                                <td>9 AM</td>
+                                <td>Doors Open + Breakfast</td>
+                                <td>Shapiro Science Center</td>
+                            </tr>
+                            <tr>
+                                <td>9 AM</td>
+                                <td>Doors Open + Breakfast</td>
+                                <td>Shapiro Science Center</td>
+                            </tr>
+                            <tr>
+                                <td>9 AM</td>
+                                <td>Doors Open + Breakfast</td>
+                                <td>Shapiro Science Center</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="pure-u-sm-1 pure-u-lg-1-2">
-                        <div class="default-padding">
-                            <h3> Sunday </h3>
-                            <table class="schedule-table">
-                                <tr>
-                                    <td>9 AM</td>
-                                    <td>Doors Open + Breakfast</td>
-                                    <td>Shapiro Science Center</td>
-                                </tr>
-                                <tr>
-                                    <td>9 AM</td>
-                                    <td>Doors Open + Breakfast</td>
-                                    <td>Shapiro Science Center</td>
-                                </tr>
-                                <tr>
-                                    <td>9 AM</td>
-                                    <td>Doors Open + Breakfast</td>
-                                    <td>Shapiro Science Center</td>
-                                </tr>
-                            </table>
-                        </div>
+                </div>
+                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                    <div class="default-padding">
+                        <h3> Sunday </h3>
+                        <table class="schedule-table">
+                            <tr>
+                                <td>9 AM</td>
+                                <td>Doors Open + Breakfast</td>
+                                <td>Shapiro Science Center</td>
+                            </tr>
+                            <tr>
+                                <td>9 AM</td>
+                                <td>Doors Open + Breakfast</td>
+                                <td>Shapiro Science Center</td>
+                            </tr>
+                            <tr>
+                                <td>9 AM</td>
+                                <td>Doors Open + Breakfast</td>
+                                <td>Shapiro Science Center</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
         </section>
 
-        <input name="panel" id="map" type="radio">
-        <section>
-            <h2>
-                <label for="map">Map</label>
-            </h2>
-            <div class="content">
-                <div class="pure-g">
-                    <div class="pure-u-sm-1 pure-u-lg-1-2">
-                        <div class="default-padding">
-                        </div>
+        <section id="map">
+            <div class="pure-g">
+                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                    <div class="default-padding">
                     </div>
                 </div>
             </div>
         </section>
 
-        <input name="panel" id="hardware" type="radio">
-        <section>
-            <h2>
-                <label for="hardware">Hardware</label>
-            </h2>
-            <div class="content">
-                <div class="pure-g">
-                    <div class="pure-u-sm-1 pure-u-lg-1-2">
-                        <div class="default-padding">
-                        </div>
+        <section id="hardware">
+            <div class="pure-g">
+                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                    <div class="default-padding">
                     </div>
                 </div>
             </div>
         </section>
 
-        <input name="panel" id="prizes" type="radio">
-        <section>
-            <h2>
-                <label for="prizes">Goodies</label>
-            </h2>
-            <div class="content">
-                <div class="pure-g">
-                    <div class="pure-u-sm-1 pure-u-lg-1-2">
-                        <div class="default-padding">
-                        </div>
+        <section id="prizes">
+            <div class="pure-g">
+                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                    <div class="default-padding">
                     </div>
                 </div>
             </div>
         </section>
 
-        <input name="panel" id="sponsors" type="radio">
-        <section>
-            <h2>
-                <label for="sponsors">Sponsors</label>
-            </h2>
-            <div class="content">
-                <div class="pure-g">
-                    <div class="pure-u-sm-1 pure-u-lg-1-2">
-                        <div class="default-padding">
-                        </div>
+        <section id="sponsors">
+            <div class="pure-g">
+                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                    <div class="default-padding">
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- <section id="map">
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <h2>//How to get here</h2>
-            </div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <div class="default-padding">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="hardware">
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <h2>//Hardware</h2>
-            </div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <div class="default-padding">
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <section id="prizes">
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <h2>//Prizes</h2>
-            </div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <div class="default-padding">
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <section id="sponsors">
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <h2>//Sponsors + partners</h2>
-            </div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-sm-1">
-                <div class="default-padding">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="pure-g">
-            <div class="pure-u-sm-1">
+            <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <h3>Made with <span class="icon icon-rocket"></span> by BITMAP</h3>
+            </div>
+            <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <h4>Contact us</h4>
+                <p>
+                    <a href="mailto:codestellation@gmail.com">Email</a> //
+                    <a href="https://twitter.com/codestellation">Twitter</a> // 
+                    <a href="https://www.facebook.com/codestellation">Facebook</a>
+                </p>
             </div>
         </div>
-    </footer> -->
+    </footer>
 
 
 
-<!--
-	<div id="map">
+	<!-- <div id="map">
     <h2 class="subsection-title">How To Get Here</h2>
     <div class="container">
       <div class="row">
