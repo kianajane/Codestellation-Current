@@ -4,62 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Codestellation Fall 2016</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
-    <script src="https://use.fonticons.com/146de994.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="js/typed.js"></script>
-  </head>
-
-<script type="text/javascript">
-window.addEventListener("DOMContentLoaded", function() {
-    $(function(){
-      $(".type").typed({
-        strings: ["world.sayHello()", "Brandeis.hack()", "spaceship.launch()"],
-        typeSpeed: 50,
-        loop: false,
-        showCursor: true,
-        backDelay: 1500,
-        backSpeed: 30,
-        cursorChar: "_"
-      });
-    });
-
-    function hasAttr(attribute) {
-        var attr = $(this).attr(attribute);
-        return (typeof attr !== typeof undefined && attr !== false)
-    }
-
-    var sections = ["#about", "#schedule", "#map", "#hardware", "#prizes", "#sponsors"];
-    sections.forEach(function(section) {
-        var button = $(section + "-button");
-        var section = $(section);
-        button.click(function(){
-            sections.forEach(function(section) {
-                if ($(section).hasClass("current")) {
-                    $(section).removeClass("current");
-                    $(section + "-button").removeClass("current");
-                }
-            });
-            section.addClass("current");
-            button.addClass("current");
-      });
-    });
-});
-</script>
+    <script src="js/js.js"></script>
+</head>
 
 <body>
     <header id="header">
-        <div class="pure-g">
-            <div class="pure-u-sm-1" id="header-sub">
+        <div class="pure-g header-sub">
+            <div class="pure-u-1" id="header-sub">
                 <h1><img src="images/logo-text.png" class="logo"></img></h1>
                 <h2>
                     <span class="prompt"> > </span>
                     <span class="type"></span>
                 </h2>
+                <div class="pure-g">
+                    <div class="pure-u-1 links">
+                            <!-- <button href=""><span class="fa fa-arrow-left"></span> Sponsor</button> -->
+                            <button href="https://www.eventbrite.com/e/codestellation-2016-tickets-26986082098">Sign up <span class="fa fa-arrow-right"></span></button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="pure-g">
@@ -70,19 +41,19 @@ window.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
                 <div class="pure-g">
-                    <div class="pure-u-sm-1 pure-u-md-1-4">
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                         <h3> where </h3>
                         <p> Shapiro Science Center, Brandeis University </p>
                     </div>
-                    <div class="pure-u-sm-1 pure-u-md-1-4">
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                         <h3> starts </h3>
                         <p> 9 AM, October 15 </p>
                     </div>
-                    <div class="pure-u-sm-1 pure-u-md-1-4">
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                         <h3> ends </h3>
                         <p> 5 PM, October 16 </p>
                     </div>
-                    <div class="pure-u-sm-1 pure-u-md-1-4">
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                         <h3> hacking time </h3>
                         <p> 24 hrs </p>
                     </div>
@@ -92,15 +63,15 @@ window.addEventListener("DOMContentLoaded", function() {
     </header>
 
     <div class="pure-g">
-        <div class="pure-u-sm-1">
-            <div class="panel-controls">
+        <div class="pure-u-1">
+            <div id="panel-controls">
                 <div class="default-padding">
-                    <button id="about-button" class="current"><h2>About</h2></button>
-                    <button id="schedule-button"><h2>Schedule</h2></button>
-                    <button id="map-button"><h2>Map</h2></button>
-                    <button id="hardware-button"><h2>Hardware</h2></button>
-                    <button id="prizes-button"><h2>Goodies</h2></button>
-                    <button id="sponsors-button"><h2>Sponsors</h2></button>
+                    <button id="about-button" class="current"><h2>About<span class="fa fa-caret-down"></span></h2></button>
+                    <!-- <button id="schedule-button"><h2>Schedule<span class="fa fa-caret-down"></span></h2></button> -->
+                    <!-- <button id="map-button"><h2>Map<<span class="fa fa-caret-down">/h2></button>
+                    <button id="hardware-button"><h2>Hardware<span class="fa fa-caret-down"></h2></button>
+                    <button id="prizes-button"><h2>Goodies<span class="fa fa-caret-down"></h2></button>
+                    <button id="sponsors-button"><h2>Sponsors<span class="fa fa-caret-down"></h2></button> -->
                 </div>
             </div>
         </div>
@@ -109,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function() {
     <div class="panel">
         <section id="about" class="current">
             <div class="pure-g">
-                <div class="pure-u-lg-1-2 pure-u-sm-1">
+                <div class="pure-u-lg-1-2 pure-u-1">
                     <div class="default-padding">
                         <div class="question-container">
                             <h3>A Hacka-What?</h3>
@@ -125,7 +96,7 @@ window.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
 
-                <div class="pure-u-lg-1-2 pure-u-sm-1">
+                <div class="pure-u-lg-1-2 pure-u-1">
                     <div class="default-padding">
                         <div class="question-container">
                             <h3>When Is This Happening?</h3>
@@ -156,7 +127,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         <section id="schedule">
             <div class="pure-g">
-                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="default-padding">
                         <h3> Saturday </h3>
                         <table class="schedule-table">
@@ -178,7 +149,7 @@ window.addEventListener("DOMContentLoaded", function() {
                         </table>
                     </div>
                 </div>
-                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="default-padding">
                         <h3> Sunday </h3>
                         <table class="schedule-table">
@@ -205,7 +176,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         <section id="map">
             <div class="pure-g">
-                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="default-padding">
                     </div>
                 </div>
@@ -214,7 +185,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         <section id="hardware">
             <div class="pure-g">
-                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="default-padding">
                     </div>
                 </div>
@@ -223,7 +194,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         <section id="prizes">
             <div class="pure-g">
-                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="default-padding">
                     </div>
                 </div>
@@ -232,20 +203,25 @@ window.addEventListener("DOMContentLoaded", function() {
 
         <section id="sponsors">
             <div class="pure-g">
-                <div class="pure-u-sm-1 pure-u-lg-1-2">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="default-padding">
                     </div>
                 </div>
             </div>
         </section>
+        <div class="pure-g">
+            <div class="scroll-top">
+                <a href="#panel-controls"><p>Scroll to top</p></a>
+            </div>
+        </div>
     </div>
 
     <footer>
         <div class="pure-g">
-            <div class="pure-u-sm-1 pure-u-lg-1-2">
-                <h3>Made with <span class="icon icon-rocket"></span> by BITMAP</h3>
+            <div class="pure-u-1 pure-u-md-1 pure-u-lg-1-2">
+                <h3>Made with <span class="fa fa-rocket"></span> by BITMAP</h3>
             </div>
-            <div class="pure-u-sm-1 pure-u-lg-1-2">
+            <div class="pure-u-1-1 pure-u-md-1 pure-u-lg-1-2">
                 <h4>Contact us</h4>
                 <p>
                     <a href="mailto:codestellation@gmail.com">Email</a> //
@@ -255,136 +231,6 @@ window.addEventListener("DOMContentLoaded", function() {
             </div>
         </div>
     </footer>
-
-
-
-	<!-- <div id="map">
-    <h2 class="subsection-title">How To Get Here</h2>
-    <div class="container">
-      <div class="row">
-        <div class="eight columns">
-          <iframe width="600"
-          height="450"
-          id="googmap"
-          src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJKyNuvJ1w44kRBE-pe_yDhj8&destination=shapiro%20science%20center%20&key=AIzaSyDUS3bGrrW2_xfd_iJiwaBShWnBDfFmIFY"
-          allowfullscreen></iframe>
-        </div>
-        <div class="four columns">
-          <p>Codestellation will be held in the Shapiro Science Center at Brandeis University in Waltham, MA. Brandeis is accessible by the 553 and 70 busses, the southbound Fitchburg line commuter rail, and is about a 20 minute uber ride/drive from Boston.</p></div>
-      </div>
-    </div>
-	</div>
-
-  <div id="schedule">
-    <h2 class="subsection-title">Available Hardware</h2>
-    <div class="container">
-      <div class="row">
-        <h3 style="color: #EB7F00"> MakerLab Hardware </h3>
-        <center>
-          <p>Brandeis' very own MakerLab is bringing it's entire collection, more info <a href="makerlab.html">here.</a>
-          <br>
-          (Please click on the link if you're even a little interested in hardware, it's an awesome and huge list)</p>
-          <h3 style="color: #EB7F00"> MLH Hardware Lab </h3>
-          <center>
-            <p>MLH will be bringing their hardware lab, more info <a href="https://mlh.io/hardware-lab">here.</a></p>
-          </center>
-        </center>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="map">
-    <h2 class="subsection-title">Prizes</h2>
-    <div class="container">
-      <div class="row">
-        <div class="four columns">
-          <h3>Most Technically Challenging</h3>
-          <center><p><a href="http://estimote.com/#jump-to-products">Estimote Bluetooth Beacons Dev Kit</a></p></center>
-        </div>
-        <div class="four columns">
-          <h3>Best Hardware Hack</h3>
-          <center><p><a href="http://www.makershed.com/products/make-subscriptions">A Year's Subscription to Make Magazine</a></p></center>
-        </div>
-        <div class="four columns">
-          <h3>Coolest Idea</h3>
-          <center><p><a href="http://www.amazon.com/gp/product/B00SAGN5CG?psc=1&redirect=true&ref_=ox_sc_act_title_1&smid=A2JRVHE2O5HQD1">Lionbay x11 Quadcopter</a></p></center>
-        </div>
-      </div>
-      <div class="row">
-        <div class="six columns">
-          <h3>Best Beginner Hack</h3>
-          <center><p><a href="http://www.amazon.com/Raspberry-Pi-Model-Project-Board/dp/B00T2U7R7I">Raspberry Pi 2 Model B</a></p></center>
-        </div>
-        <div class="six columns">
-          <h3>People's Choice</h3>
-          <center><p><a href="https://www.soylent.com/">Soylent</a> and <a href="http://www.imcardboard.com/wwgc-vr-kit/eva-version-vr-kit-with-nfc.html">Google Cardboard</a></p></center>
-        </div>
-      </div>
-      <div class="row">
-        <div class="six columns">
-          <h3>Best Use of AWS</h3>
-          <center><p>1 TB Flashdrives</p></center>
-        </div>
-        <div class="six columns">
-          <h3>Best Domain</h3>
-          <center><p>Domain.com Swag Bags</center>
-        </div>
-      </div>
-    </div>
-  </div>
-
-	<div id="sponsors">
-    <h2 class="subsection-title">Sponsors</h2>
-    <div class="container">
-      <div class="row">
-        <div class="four columns">
-          <center>
-          <img src="images/intrepid.png">
-          </center>
-        </div>
-        <div class="four columns">
-          <center>
-          <img src="images/estimote.png">
-          </center>
-        </div>
-        <div class="four columns">
-          <center>
-          <img src="images/soylent.png">
-          <center>
-        </div>
-      </div>
-    </div>
-    <h2 class="subsection-title">Partners</h2>
-    <div class="container">
-      <div class="row">
-        <div class="four columns offset-by-two">
-          <center>
-          <img src="images/mlh-logo.png">
-          </center>
-        </div>
-        <div class="four columns">
-          <center>
-            <img src="images/makerlab.jpg">
-          </center>
-        </div>
-      </div>
-    </div>
-	</div>
-
-	<div id="footer">
-    <h3>Made with <i class="icon icon-rocket"></i> by BITMAP</h3>
-    <div class="footer-icon">
-      <h3>
-        <a href="mailto:codestellation@gmail.com"><i class="icon icon-envelope-o icon-lg" ></a></i>
-        <a href="https://twitter.com/codestellation"><i class="icon icon-twitter icon-lg"></a></i>
-        <a href="https://www.facebook.com/codestellation"><i class="icon icon-facebook icon-lg"></a></i>
-      </h3>
-    </div>
-	</div>
-
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
-	<script src="js/constellation.js"></script> -->
 
 </body>
 </html>

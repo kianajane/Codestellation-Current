@@ -38,6 +38,7 @@ h4 {
 p {
     line-height: 1.8;
     font-size: 1.2em;
+    letter-spacing: normal;
 }
 h3, h4, h5, p {
     font-family: "Space Mono", serif;
@@ -45,34 +46,197 @@ h3, h4, h5, p {
 }
 
 
-/* TODO: viewport sizes */
+/* responsive */
+@media screen and (max-width: 35.5em) {
+    h1 {
+        padding: 0;
+        margin: 0 0 .25em 0;
+    }
+    h2 {
+        font-size: 1.7em;
+        letter-spacing: .1em
+    }
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+        margin-top: .5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .schedule-table td {
+        font-size: .8em;
+        padding: .2em .8em;
+    }
+    #header-sub h2 {
+        font-size: 1.2em;
+    }
+    #quick-facts h3 {
+        letter-spacing: .2em;
+    }
+    #header-sub {
+        min-height: 300px;
+    }
+    .panel {
+        padding: 0 1em 0 1em;
+    }
+    .default-padding {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 0;
+    }
+    #panel-controls {
+        padding-left: 1em;
+    }
+    .question-container {
+        margin-bottom: 2em;
+    }
+    footer h3{
+        text-align: center;
+    }
+    .links button {
+        padding: .7em;
+        margin: 1em .5em 0 0;
+        font-size: .9em;
+    }
+}
+@media screen and (min-width: 35.5em) and (max-width: 48em)	{
+    h1 {
+        padding: 0;
+        margin: 0 0 .25em 0;
+    }
+    h2 {
+        font-size: 1.7em;
+        letter-spacing: .1em
+    }
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+        margin-top: .5em;
+    }
+    p {
+        font-size: 1.1em;
+        letter-spacing: normal;
+    }
+    .schedule-table td {
+        letter-spacing: normal;
+        font-size: 1.1em;
+        padding: .2em .8em;
+    }
+    #header-sub h2 {
+        font-size: 1.5em;
+    }
+    #quick-facts h3 {
+        letter-spacing: .25em;
+    }
+    #header-sub {
+        min-height: 400px;
+    }
+    .panel {
+        padding: 0 1em 0 1em;
+    }
+    .default-padding {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 0;
+    }
+    #panel-controls {
+        padding-left: 1em;
+    }
+    .question-container {
+        margin-bottom: 2em;
+    }
+    footer h3{
+        text-align: center;
+    }
+    .links button {
+        padding: .7em;
+        margin: 2em 1em 0 0;
+        font-size: 1.2em;
+    }
+}
+@media screen and (min-width:48em) and (max-width: 80em)	{
+    h1 {
+        padding: .2em;
+    }
+    .schedule-table td {
+        letter-spacing: normal;
+        font-size: 1.1em;
+        padding: .2em .8em;
+    }
+    #header-sub {
+        min-height: 400px;
+    }
+    #header-sub h2 {
+        font-size: 1.5em;
+    }
+    .panel {
+        padding: 0 1em 0 1em;
+    }
+    .default-padding {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 0;
+    }
+    #panel-controls {
+        padding-left: 1em;
+    }
+    .links button {
+        padding: .7em;
+        margin: 2em 1em 0 0;
+        font-size: 1.2em;
+    }
+}
+@media screen and (min-width: 80em)	 {
+    #quick-facts h3 {
+        letter-spacing: .25em;
+    }
+    #header-sub {
+        min-height: 600px;
+    }
+    .panel {
+        padding: 0 4em 0 4em;
+    }
+    .default-padding {
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-bottom: 2em;
+    }
+    .scroll-top {
+        display: none;
+    }
+    .question-container {
+        margin-bottom: 3.5em;
+    }
+    .schedule-table td {
+        padding: .5em 1em;
+        font-size: 1.2em;
+    }
+    .links button {
+        padding: .7em;
+        margin: 2em 1em 0 0;
+        font-size: 1.2em;
+    }
+}
 
 
 /* spacing */
-.question-container {
-    margin-bottom: 3.5em;
-}
-.default-padding {
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 2em;
-}
 section {
     margin: 0;
     width: 100%;
 }
 
+
 /* panel */
-.panel-controls {
+#panel-controls {
     margin-top: 2em;
-    padding-left: 0;
     margin-left: 0;
 }
-.panel-controls h2 {
-    margin-left: 0;
+#panel-controls button {
+    margin-right: 1em;
 }
-.panel {
-    padding: 0 4em 0 4em;
+#panel-controls h2 {
+    margin-left: 0;
 }
 .panel section{
     width : 100%;
@@ -81,10 +245,16 @@ section {
 .panel section.current {
     display: block;
 }
-.panel-controls .current h2{
+#panel-controls .current h2{
     color: #19E0A2;
 }
-.panel-controls .default-padding {
+#panel-controls .current .icon {
+    display: inline-block;
+}
+#panel-controls .icon {
+    display: none;
+}
+#panel-controls .default-padding {
     padding-bottom: 0;
 }
 
@@ -103,7 +273,6 @@ header {
     margin: 0;
     text-align: center;
     margin-top: 7em;
-    min-height: 400px;
     position: relative;
 }
 .logo {
@@ -133,7 +302,6 @@ header {
     font-size: 1.3em;
     font-family: "Rubik", serif;
     text-transform: uppercase;
-    letter-spacing: .25em;
 }
 #quick-facts p {
     padding: 0;
@@ -190,12 +358,11 @@ header {
 #schedule h3 {
     text-align: center;
 }
-.schedule-table td {
-    padding: .5em 1em;
-    font-size: 1.2em;
-}
 .schedule-table {
     font-family: "Space Mono", serif;
+}
+.schedule-table td {
+    letter-spacing: normal;
 }
 
 
@@ -241,4 +408,20 @@ footer p {
 }
 footer a {
     color: #19E0A2;
+}
+
+
+/* misc. */
+.scroll-top{
+    text-align: right;
+    letter-spacing: normal;
+    width: 100%;
+}
+.sponsor-link {
+    text-align: right;
+}
+.links button {
+    border: 2px solid black;
+    text-transform: uppercase;
+    font-family: "Space Mono";
 }
