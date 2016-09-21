@@ -1,12 +1,12 @@
 body {
-  overflow-x: hidden;
-  background: white;
+    overflow-x: hidden;
+    background: white;
 }
 
 
 /* typography */
 h1, h2 {
-	font-family: 'Rubik', serif;
+    font-family: 'Rubik', serif;
     letter-spacing: normal;
 }
 h1 {
@@ -276,8 +276,10 @@ header {
     position: relative;
 }
 .logo {
-   max-width: 100%;
-   height: auto;
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: auto;
 }
 .type {
     text-transform: lowercase;
